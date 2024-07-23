@@ -1,0 +1,94 @@
+﻿@model Application.DTOs.DepartmentHierarchyDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Parents</h4>
+    <hr />
+    <dl class="row">
+        @foreach(var item in Model.Parents){
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => item.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => item.Id)
+        </dd> 
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => item.Name)
+        </dt>
+        <dd class = "col-sm-10">
+                @Html.DisplayFor(model => item.Name)
+        </dd> <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => item.Logo)
+        </dt>
+        <dd class = "col-sm-10">
+                @Html.DisplayFor(model => item.Logo)
+        </dd>
+    <hr />
+        }
+    </dl>
+
+</div>
+
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Department.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Department.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Department.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Department.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Department.Logo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Department.Logo)
+        </dd>
+    </dl>
+
+</div>
+<div>
+    <h4>Children</h4>
+    <hr />
+    <dl class="row">
+        @foreach (var item in Model.Children)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.Id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => item.Logo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => item.Logo)
+            </dd>
+    <hr />
+        }
+    </dl>
+
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -15,12 +15,12 @@ namespace Infrastructure.Persistence.Unit
     {
         private readonly RingoMediaContext _context;
 
-        public IGenericRepository<Department> Department { get; private set; }
+        public IDepartmentRepository Department { get; private set; }
 
         public UnitOfWork(RingoMediaContext context)
         {
             _context = context;
-            Department =new GenericRepository<Department>(_context);
+            Department =new DepartmentRepository(_context);
 
         }
         public void Dispose()

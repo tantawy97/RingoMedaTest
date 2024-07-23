@@ -10,7 +10,7 @@ namespace Application.Interfaces.IUnit
 {
     public interface IUnitOfWork:IDisposable
     {
-        IGenericRepository<Department> Department { get; }
+        IDepartmentRepository Department { get; }
         Task<int> Save();
 
     }

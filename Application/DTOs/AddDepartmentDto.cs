@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace Application.DTOs
 {
-    public class Department
+    public class AddDepartmentDto
     {
-        public long Id { get; set; }
         public string Name { get; set; } = null!;
         public string Logo { get; set; } = null!;
         public long? ParentDepartmentId { get; set; }
-        public virtual Department? ParentDepartment { get; set; } 
-        public virtual List<Department>? SubDepartments { get; set; }
     }
 }
