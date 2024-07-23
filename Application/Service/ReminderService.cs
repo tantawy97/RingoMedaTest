@@ -27,10 +27,10 @@ namespace Application.Service
             {
                 Title = dto.Name,
                 Header = dto.Name,
-                Message = $"don't forget {dto.Name}",
+                Message = $"متنسيش تعكننى عليا انا نازل مع شبراوى",
             };
             var mailBody = mailKitEmailClient.CreateEmailBody(emailModel);
-            BackgroundJob.Schedule(() => mailKitEmailClient.SendEmailAsync("tant_9@yahoo.com", emailModel.Header, mailBody), dto.RemindTime);
+            BackgroundJob.Schedule(() => mailKitEmailClient.SendEmailAsync("ShahdMagdy404@gmail.com", emailModel.Header, mailBody), dto.RemindTime);
 
             //RecurringJob.AddOrUpdate("expired-package-job", () =>mailKitEmailClient.SendEmailAsync("tant_9@yahoo.com", emailModel.Header, mailBody), Cron.Daily(00, 00)); // Daily at 12:00 UTC
         }
