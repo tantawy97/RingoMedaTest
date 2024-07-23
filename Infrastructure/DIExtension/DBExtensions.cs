@@ -18,7 +18,7 @@ namespace Infrastructure.DIExtension
         {
             services.AddDbContext<RingoMediaContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("ConnectionStrings"), builder =>
+                options.UseSqlServer(configuration.GetConnectionString("RingoMediaCs"), builder =>
                 {
                     builder.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
                 });
