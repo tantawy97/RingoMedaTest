@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.DTOs
+namespace Application.DTOs.Departments
 {
-    public class DepartmentDto
+    public class AddDepartmentDto
     {
-        public long Id { get; set; }
         public string Name { get; set; } = null!;
         public string Logo { get; set; } = null!;
+        public long? ParentDepartmentId { get; set; }
     }
 }
