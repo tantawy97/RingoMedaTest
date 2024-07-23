@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.DTOs.Reminders
+namespace Application.DTOs
 {
-    public class ReminderDto
+    public class AddDepartmentDto
     {
         public string Name { get; set; } = null!;
-        public DateTime RemindTime { get; set; }
+        public string Logo { get; set; } = null!;
+        public long? ParentDepartmentId { get; set; }
     }
 }

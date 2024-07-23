@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34518.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RingoMediaTest", "RingoMedaTest\RingoMediaTest.csproj", "{18FD399B-66BE-498D-AE50-0AF52B231887}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RingoMediaTest", "RingoMedaTest\RingoMediaTest.csproj", "{18FD399B-66BE-498D-AE50-0AF52B231887}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{874ACC4F-34F9-4A40-8ACF-6DF122702102}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{874ACC4F-34F9-4A40-8ACF-6DF122702102}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{A8034A2F-0311-4AEC-9DD0-1F02788ECE74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{A8034A2F-0311-4AEC-9DD0-1F02788ECE74}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{1A4DDE07-FBFA-49C3-8E17-74E2493EB522}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{EABFC46B-7A92-49FD-BFBA-A277CE1CA398}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{1A4DDE07-FBFA-49C3-8E17-74E2493EB522}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{1A4DDE07-FBFA-49C3-8E17-74E2493EB522}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A4DDE07-FBFA-49C3-8E17-74E2493EB522}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A4DDE07-FBFA-49C3-8E17-74E2493EB522}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EABFC46B-7A92-49FD-BFBA-A277CE1CA398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EABFC46B-7A92-49FD-BFBA-A277CE1CA398}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EABFC46B-7A92-49FD-BFBA-A277CE1CA398}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EABFC46B-7A92-49FD-BFBA-A277CE1CA398}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

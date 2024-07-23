@@ -1,8 +1,5 @@
 ﻿using Application.Interfaces.IService;
 using Application.Service;
-using Client.EmailClient.Interfaces;
-using Client.EmailClient.MailKit;
-using Client.EmailClient.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -17,12 +14,7 @@ namespace Application.DIExtension
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<IDepartmentService, DepartmentService>();
-            services.AddScoped<IReminderService, ReminderService>();
-            services.AddScoped<IMailKitEmailClient, MailKitEmailClient>();
-            services.AddScoped<IViewRender, ViewRender>();
-            services.AddScoped<IViewRender, HandlebarsService>();
             services.AddAutoMapper(typeof(ApplicationServicesDIExtension));
-
 
             return services;
         }

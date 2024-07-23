@@ -1,17 +1,12 @@
 using Infrastructure.DIExtension;
 using Application.DIExtension;
-using Hangfire;
-using Client.EmailClient.Configuration;
-using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services
     .AddSQLServerDatabase(builder.Configuration)
-    .AddHangFireService(builder.Configuration)
     .AddApplicationServices();
-builder.Services.Configure<EmailConfiguration>(builder.Configuration.GetSection(nameof(EmailConfiguration)));
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -29,7 +24,6 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.UseHangfireDashboard("/HangFireDashboard");
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Department}/{action=Index}/{id?}");

@@ -1,4 +1,4 @@
-﻿using Application.DTOs.Departments;
+﻿using Application.DTOs;
 using Application.Interfaces.IService;
 using Application.Interfaces.IUnit;
 using AutoMapper;
