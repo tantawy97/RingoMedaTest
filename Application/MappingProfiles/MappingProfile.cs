@@ -1,4 +1,4 @@
-﻿using Application.DTOs;
+﻿using Application.DTOs.Departments;
 using AutoMapper;
 using Core.Entities;
 using System;
