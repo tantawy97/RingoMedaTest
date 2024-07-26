@@ -4,91 +4,35 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1 class="h3 mb-0 text-gray-800">Hierarchical Tree Structure</h1>
+<nav class="hierarchy">
+    @foreach(var parent in Model.Parents)
+    {
+        @:<ul>
+        @:    <li>
+        @Html.ActionLink(parent.Name.ToString(), "Details", new { id = parent.Id })
 
-<div>
-    <h4>Parents</h4>
-    <hr />
-    <dl class="row">
-        @foreach(var item in Model.Parents){
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => item.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => item.Id)
-        </dd> 
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => item.Name)
-        </dt>
-        <dd class = "col-sm-10">
-                @Html.DisplayFor(model => item.Name)
-        </dd> <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => item.Logo)
-        </dt>
-        <dd class = "col-sm-10">
-                @Html.DisplayFor(model => item.Logo)
-        </dd>
-    <hr />
-        }
-    </dl>
+    }
+    <ul>
+        <li>
+            @Html.ActionLink(@Model.Department.Name, "Details", new { id = @Model.Department.Id })
 
-</div>
-
-<div>
-    <h4>Department</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Department.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Department.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Department.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Department.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Department.Logo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Department.Logo)
-        </dd>
-    </dl>
-
-</div>
-<div>
-    <h4>Children</h4>
-    <hr />
-    <dl class="row">
-        @foreach (var item in Model.Children)
-        {
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => item.Id)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => item.Id)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => item.Name)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => item.Name)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => item.Logo)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => item.Logo)
-            </dd>
-    <hr />
-        }
-    </dl>
-
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
-</div>
+            @if(Model.Children.Count() > 0)
+            {
+            <ul>
+                @foreach(var child in Model.Children)
+                {
+                    <li>
+                        @Html.ActionLink(child.Name.ToString(), "Details", new { id = child.Id })
+                    </li>
+                }
+            </ul>
+            }
+        </li>
+    </ul>
+    @for(int i = 0; i < Model.Parents.Count; i++)
+    {
+        @:</li>
+        @:</ul>
+    }
+</nav>

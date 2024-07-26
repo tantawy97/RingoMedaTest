@@ -2,42 +2,64 @@
 
 @{
     ViewData["Title"] = "Create";
+    var departments = new SelectList(ViewBag.Departments, "Id", "Name");
 }
 
-<h1>Create</h1>
+<div class="row justify-content-center">
 
-<h4>AddDepartmentDto</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+<div class="col-xl-10 col-lg-12 col-md-9">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Add New Department</h1>
+                        </div>
+                            <form class="user" asp-action="Create" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input class="form-control form-control-user"
+                                       id="exampleInputEmail" aria-describedby="emailHelp"
+                                       asp-for="Name"
+                                       placeholder="Enter Your Name...">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+
+                            </div>
+                            <div class="form-group">
+                                 <label asp-for="Logo" class="control-label"></label> 
+                                <input type="file" asp-for="Logo" class="form-control-user">
+                                    <span asp-validation-for="Logo" class="text-danger"></span>
+
+                            </div>
+                            <div class="form-group">
+                                 <label class="control-label">Department</label>
+                                    <select asp-items="departments" asp-for="ParentDepartmentId" class="form-control-user">
+                                        <option value="null">---- Choose ----</option>
+                                        </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                Add
+                            </button>
+                            <hr>
+                            <a asp-action="Index" class="btn btn-google btn-user btn-block">
+                                <i class="fab fa-google fa-fw"></i> Back to list
+                            </a>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Logo" class="control-label"></label>
-                <input asp-for="Logo" class="form-control" />
-                <span asp-validation-for="Logo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ParentDepartmentId" class="control-label"></label>
-                <input type="text" asp-for="ParentDepartmentId" class="form-control" />
-                <span asp-validation-for="ParentDepartmentId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
+
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+        </div>
 
-@section Scripts {
+@* @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+} *@

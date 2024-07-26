@@ -9,6 +9,6 @@ namespace Application.Interfaces.IRepository
 {
     public interface IDepartmentRepository : IGenericRepository<Department>
     {
-        public Task<(Department, List<Department>)> GetById(long id);
+        public Task<(Department, List<Department>)> GetByIdAsync(long id);
     }
 }

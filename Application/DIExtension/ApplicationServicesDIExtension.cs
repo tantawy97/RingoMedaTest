@@ -1,4 +1,6 @@
-﻿using Application.Interfaces.IService;
+﻿using Application.Implementation.Utility;
+using Application.Interfaces.IService;
+using Application.Interfaces.IUtility;
 using Application.Service;
 using Client.EmailClient.Interfaces;
 using Client.EmailClient.MailKit;
@@ -18,6 +20,7 @@ namespace Application.DIExtension
         {
             services.AddScoped<IDepartmentService, DepartmentService>();
             services.AddScoped<IReminderService, ReminderService>();
+            services.AddScoped<IFileUtility, FileUtility>();
             services.AddScoped<IMailKitEmailClient, MailKitEmailClient>();
             services.AddScoped<IViewRender, ViewRender>();
             services.AddScoped<IViewRender, HandlebarsService>();

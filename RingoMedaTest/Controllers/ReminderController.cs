@@ -21,7 +21,7 @@ namespace RingoMediaTest.Controllers
         {
             _reminderService.ScheduleHangFireJob(reminder);
 
-            return View("Index");
+            return RedirectToAction("Index");
         }
     }
 }

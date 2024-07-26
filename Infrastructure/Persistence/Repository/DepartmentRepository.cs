@@ -14,7 +14,7 @@ namespace Infrastructure.Persistence.Repository
     {
         public DepartmentRepository(RingoMediaContext context):base(context) { }
 
-        public async Task<(Department,List<Department>)> GetById(long id)
+        public async Task<(Department,List<Department>)> GetByIdAsync(long id)
         {
            var department =await _context.Departments
                 .Include(w=>w.SubDepartments)

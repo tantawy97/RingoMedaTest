@@ -10,6 +10,7 @@ namespace Application.Interfaces.IService
     public interface IDepartmentService
     {
         Task<DepartmentHierarchyDto> GetDepartmentHierarchyAsync(long startId);
-
+        Task<List<DepartmentDto>> GetAllAsync();
+        Task AddAsync(AddDepartmentDto departmentDto);
     }
 }
